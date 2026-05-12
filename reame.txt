@@ -1,0 +1,111 @@
+Implementação de Media Queries e Layouts Flexíveis (Flexbox)
+
+No desenvolvimento web moderno, é fundamental criar interfaces que funcionem corretamente em diferentes tamanhos de tela, como celulares, 
+tablets e computadores. Para isso, utilizam-se técnicas de responsividade, entre elas as Media Queries e os Layouts Flexíveis com Flexbox.
+
+As Media Queries são recursos do CSS que permitem aplicar estilos diferentes dependendo das características da tela do dispositivo.
+Dessa forma, o layout pode se adaptar automaticamente conforme a largura da janela do navegador. Essa técnica evita a necessidade
+de criar versões separadas do mesmo site para desktop e mobile.
+
+No arquivo style.css do exercício desenvolvido, as Media Queries foram aplicadas da seguinte forma:
+
+@media (max-width: 768px) {
+
+    .header {
+        background-color: #d32f2f;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-content {
+        width: 100%;
+        border-color: #610606;
+        margin-bottom: 1rem;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+}
+
+Nesse exemplo, quando a largura da tela for menor ou igual a 768 pixels, o layout passa para o modo mobile.
+O container altera a direção dos elementos para coluna utilizando flex-direction: column, fazendo com que
+os elementos sejam empilhados verticalmente. Além disso, o cabeçalho muda de cor para vermelho,
+funcionando como um feedback visual de que o breakpoint foi ativado.
+
+Esse ponto de alteração é chamado de breakpoint, muito utilizado para melhorar a visualização em dispositivos móveis.
+
+Além das Media Queries, outro recurso importante é o Flexbox (Flexible Box Layout), um modelo de layout do CSS criado 
+para organizar elementos de maneira flexível e responsiva. O Flexbox facilita o alinhamento, espaçamento e 
+distribuição dos itens dentro de um container, reduzindo problemas comuns de posicionamento.
+
+No projeto desenvolvido, o Flexbox foi utilizado no container principal da página:
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1100px;
+    margin: 20px auto;
+    gap: 15px;
+}
+
+A partir disso, os elementos internos passam a obedecer ao sistema flexível. No arquivo index.html, os elementos organizados pelo Flexbox são:
+
+<div class="container">
+
+    <main class="main-content">
+        ...
+    </main>
+
+    <aside class="sidebar">
+        ...
+    </aside>
+
+</div>
+
+Nesse caso, o Flexbox organiza os elementos .main-content e .sidebar lado a lado na versão desktop.
+
+Também foi utilizada a propriedade flex para dividir proporcionalmente os espaços da tela:
+
+.main-content {
+    flex: 3;
+}
+
+.sidebar {
+    flex: 1;
+}
+
+Isso faz com que o conteúdo principal ocupe uma área maior da tela, enquanto a barra lateral ocupa uma área menor.
+
+Outro benefício do Flexbox é a facilidade para alterar a direção dos elementos conforme o tamanho da tela. 
+No desktop, os elementos permanecem em linha horizontal. Já no mobile, a Media Query altera a direção para coluna:
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+Dessa forma, o site adapta automaticamente sua estrutura conforme o dispositivo utilizado pelo usuário.
+
+Além disso, o projeto também utiliza outras técnicas importantes de responsividade, como:
+
+* {
+    box-sizing: border-box;
+}
+
+A propriedade box-sizing: border-box impede que padding e bordas aumentem a largura total dos elementos, evitando problemas de transbordamento.
+
+Também foi utilizada unidade relativa REM:
+
+body {
+    font-size: 1rem;
+}
+
+O uso de rem melhora a acessibilidade e permite que o layout se adapte melhor às configurações de fonte do navegador.
+
+Portanto, as Media Queries e o Flexbox são tecnologias essenciais na construção de interfaces modernas. Enquanto as Media Queries 
+permitem aplicar regras condicionais para diferentes tamanhos de tela, o Flexbox oferece uma maneira eficiente e flexível de 
+organizar elementos na página, contribuindo para uma melhor experiência do usuário e para layouts mais organizados e responsivos.
