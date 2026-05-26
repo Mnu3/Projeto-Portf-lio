@@ -1,0 +1,137 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f4f6;
+    padding: 40px;
+
+    display: flex;
+    justify-content: center;
+}
+
+/* CONTAINER PRINCIPAL */
+.tabela-grid{
+    width: 100%;
+    max-width: 70%;
+
+    display: grid;
+
+    /* GRID PROFISSIONAL */
+    grid-template-columns: 2fr repeat(3, 1fr);
+
+    background: white;
+
+    border-radius: 16px;
+    overflow: hidden;
+
+    box-shadow:
+    0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* ESTILO GERAL */
+.item{
+    padding: 18px;
+
+    border: 1px solid #e5e7eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    transition: 0.2s;
+}
+
+/* TÍTULO */
+.titulo{
+    grid-column: span 4;
+
+    background: #111827;
+    color: white;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    padding: 24px;
+}
+
+/* CABEÇALHO */
+.header{
+    background: #d1d5db;
+
+    font-weight: bold;
+    font-size: 17px;
+}
+
+/* SUB CABEÇALHO */
+.subheader{
+    background: #e5e7eb;
+
+    font-weight: bold;
+}
+
+/* PRODUTOS */
+.produto{
+    justify-content: start;
+
+    padding-left: 25px;
+
+    font-weight: 600;
+}
+
+/* DADOS */
+.dado:hover{
+    background: #f9fafb;
+
+    transform: scale(1.02);
+}
+
+/* TOTAL */
+.total-texto{
+    grid-column: span 3;
+
+    justify-content: end;
+
+    background: #f3f4f6;
+
+    font-weight: bold;
+}
+
+.total-valor{
+    background: #dcfce7;
+
+    font-weight: bold;
+
+    color: #166534;
+}
+
+/* RESPONSIVIDADE */
+@media(max-width: 768px){
+
+    .tabela-grid{
+
+        /* GRID RESPONSIVO */
+        grid-template-columns: 1fr;
+    }
+
+    .titulo,
+    .header,
+    .subheader,
+    .total-texto,
+    .total-valor{
+        grid-column: span 1;
+    }
+
+    .produto{
+        justify-content: center;
+        padding-left: 0;
+    }
+
+}

@@ -1,0 +1,46 @@
+Implementação de CSS Grid Layout Profissional
+
+No desenvolvimento web moderno, o CSS Grid Layout é uma das principais tecnologias utilizadas
+para construir interfaces organizadas, responsivas e profissionais. Diferente dos métodos
+antigos de posicionamento, o Grid permite criar estruturas baseadas em linhas e colunas 
+de forma simples e eficiente, facilitando a criação de dashboards, tabelas, galerias e 
+ayouts completos de páginas.
+
+
+O CSS Grid funciona através da propriedade:
+
+display: grid;
+Ao aplicar essa propriedade em um elemento container, todos os elementos
+internos passam a obedecer ao sistema de grid.
+
+No projeto desenvolvido, o Grid foi utilizado para construir uma tabela 
+de vendas trimestrais totalmente organizada através de colunas proporcionais.
+
+No arquivo style.css do exercício desenvolvido, a Implementação de CSS Grid foram aplicadas da seguinte forma:
+.tabela-grid{
+    display: grid;
+
+    grid-template-columns:
+    2fr repeat(3, 1fr);
+}
+Nesse exemplo, o layout foi dividido em quatro colunas. 
+A primeira coluna ocupa duas frações do espaço disponível (2fr), 
+enquanto as outras três colunas ocupam uma fração cada (1fr).
+
+Isso faz com que a coluna dos produtos fique maior que as colunas dos meses, 
+melhorando a visualização dos dados.
+
+O uso da função repeat() também torna o código mais limpo e profissional:
+repeat(3, 1fr)
+Essa instrução significa que três colunas serão criadas 
+automaticamente com o mesmo tamanho proporcional.
+
+Além disso, o projeto utiliza a propriedade:
+grid-column: span 4;
+Essa propriedade foi aplicada no título principal da tabela:
+.titulo{
+    grid-column: span 4;
+}
+Com isso, o título ocupa as quatro colunas do Grid, funcionando 
+como um cabeçalho principal. E o mesmo recurso foi utilizado 
+no rodapé da tabela.
